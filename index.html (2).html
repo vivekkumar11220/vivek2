@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Special Intro with Rocket</title>
+  <style>
+    body {
+      background: radial-gradient(circle, #fff8f0, #e0c3fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+    }
+
+    #intro, #messageScreen {
+      text-align: center;
+      animation: popup 1s ease-out;
+    }
+
+    @keyframes popup {
+      from {
+        transform: scale(0.2);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    #intro img {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #5d4037;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #3e2723;
+    }
+
+    #messageScreen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rocket {
+      width: 80px;
+      height: 80px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/RedRocketEmoji.png') no-repeat center/contain;
+      animation: flyRocket 2s ease-in-out infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes flyRocket {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    h2 {
+      color: #4e342e;
+      margin: 0;
+      font-size: 26px;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Intro with GIF -->
+<div id="intro">
+  <img src="https://media.tenor.com/evfIvK16r8QAAAAi/cake-party.gif" alt="Celebration GIF" onclick="showMessage()" />
+  <br />
+  <h2>vivek you have to write some thing </h2>
+  <button onclick="showMessage()">Next →</button>
+</div>
+
+<!-- Message with Rocket -->
+<div id="messageScreen">
+  <div class="rocket"></div>
+  <h2>vivek you have to write some thing </h2>
+  <button onclick="goToNextPage()">Open Book →</button>
+</div>
+
+<script>
+  function showMessage() {
+    document.getElementById('intro').style.display = 'none';
+    document.getElementById('messageScreen').style.display = 'flex';
+  }
+
+  function goToNextPage() {
+    // Redirect to another website
+    window.location.href = "https://vivek-eight.vercel.app/"; // Replace with your real URL
+  }
+</script>
+
+</body>
+</html>
